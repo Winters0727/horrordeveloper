@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "deploy": "next build && fsutil file createnew out/.nojekyll 0 && git add out/ && git commit -m 'deploy gh-pages' && git subtree push --prefix out origin gh-pages"
+    "deploy": "rm -r out/ && next build && next export && fsutil file createnew out/.nojekyll 0 && git add out/ && git commit -m 'deploy gh-pages' && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "next": "12.1.0",
