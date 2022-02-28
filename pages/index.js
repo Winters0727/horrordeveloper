@@ -1,5 +1,8 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
+
+import { useAudio } from "../hooks/audio";
 
 export default function Home() {
   const prefix =
@@ -7,14 +10,25 @@ export default function Home() {
       ? "https://winters0727.github.io/horror-developer"
       : "";
 
+  const router = useRouter();
+  const [isPlay, toggle] = useAudio("assets/sounds/open_door.mp3");
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Deploy Test</title>
+        <title>Horror Developer - 어느 개발자의 저택</title>
       </Head>
 
-      <main className={styles.main}>Main</main>
-
+      <main>Main</main>
+      <button
+        className="submit-btn"
+        onClick={(e) => {
+          toggle();
+          router.push("/intro");
+        }}
+      >
+        버튼
+      </button>
       <footer className={styles.footer}>Footer</footer>
     </div>
   );
