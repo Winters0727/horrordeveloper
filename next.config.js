@@ -2,7 +2,7 @@
 const nextConfig = {
   assetPrefix:
     process.env.NODE_ENV === "production"
-      ? "https://winters0727.github.io/horror-developer"
+      ? "https://winters0727.github.io/horrordeveloper"
       : "",
   reactStrictMode: true,
 };
