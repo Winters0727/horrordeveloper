@@ -7,7 +7,7 @@ import { useAudio } from "../hooks/audio";
 export default function Home() {
   const prefix =
     process.env.NODE_ENV === "production"
-      ? "https://winters0727.github.io/horror-developer"
+      ? "https://winters0727.github.io/horrordeveloper"
       : "";
 
   const router = useRouter();
